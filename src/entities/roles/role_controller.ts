@@ -25,12 +25,12 @@ import {
     }
   
     @Get()
-    async findAll(): Promise<Roles[]> {
+    findAll(): Promise<Roles[]> {
       return this.RolesService.findAll();
     }
   
     @Get(':id')
-    async findOne(@Param('id') id: string): Promise<Roles> {
+    findOne(@Param('id') id: string): Promise<Roles> {
       const role = this.RolesService.findOne(id);
       if (role === undefined) {
         alert(`Role with id = #${id} is not exists`);
